@@ -21,7 +21,7 @@ This is obtained with a combination of "reducing" and "matching". Given a piece 
 Usage:
 
 ```
-const detect = require('customisable-language-detection')
+const detect = require('@chattylabs/language-detection')
 const result = detect('some text to detect')
 const language = result.language
 ```
@@ -29,7 +29,7 @@ const language = result.language
 ### With custom language profiles
 
 ```
-const detect = require('customisable-language-detection')
+const detect = require('@chattylabs/language-detection')
 const customLanguageProfiles = require('../path/to/data/languageProfiles.json')
 
 const result = detect(text, {
@@ -43,7 +43,7 @@ NOTE: the languages you provide will be the set used, you could additionally mer
 
 ```
 const combinedProfiles = {
-  ...require('customisable-language-detection').languageProfiles,
+  ...require('@chattylabs/language-detection').languageProfiles,
   ...customLanguageProfiles
 }
 ```
@@ -56,7 +56,7 @@ Your sample data should be a set of txt files containing as much text as possibl
 
 ```
 // bin/train.js
-const train = require('customisable-language-detection').train
+const train = require('@chattylabs/language-detection').train
 train('./path/to/custom/samples/*.txt', './path/to/custom/export/languageProfiles.json')
 ```
 
@@ -68,7 +68,7 @@ NOTE: filenames determine the language, but using filename such as en_GB will re
 ### With custom reducers
 
 ```
-const detect = require('customisable-language-detection')
+const detect = require('@chattylabs/language-detection')
 const customLanguageProfiles = require('../path/to/data/languageProfiles.json')
 const customReducers = require('../path/to/your/reducers')
 
@@ -107,7 +107,7 @@ You can also combine your own reducers with the base ones:
 
 ```
 const combinedProfiles = {
-  ...require('customisable-language-detection').reducers,
+  ...require('@chattylabs/language-detection').reducers,
   ...customReducers
 }
 ```

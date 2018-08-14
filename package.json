@@ -1,11 +1,11 @@
 {
-  "name": "customisable-language-detection",
+  "name": "@chattylabs/language-detection",
   "version": "0.1.0",
-  "description": "Library that helps detecting the language of a given piece of text.",
+  "description": "Package to detect the language of a given text (focusing on short sms type text used on tweets, facebook, WhatsApp, etc)",
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/danielantelo/language-detector.git"
+    "url": "git+https://github.com/chattylabs/language-detector"
   },
   "author": {
     "name" : "Daniel Antelo",

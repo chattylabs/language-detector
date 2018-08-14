@@ -1,9 +1,13 @@
 // @TODO
 module.exports = [
-  // {
-  //   regex: /[ñ]+/i,
-  //   languages: ['es', 'gn', 'gl']
-  // },
+  {
+    regex: /[ñ]+/i,
+    languages: ['es', 'gn', 'gl']
+  },
+  {
+    regex: /[á|é|í|ó|ú]+/i,
+    languages: ['fr', 'es', 'it', 'cn', 'nl', 'fo', 'is', 'pt', 'vi', 'cy', 'el']
+  },
   // {
   //   regex: /[ü]+/i,
   //   languages: ['es', 'tr', 'fr', 'hu', 'et', 'de', 'sv']
@@ -11,10 +15,6 @@ module.exports = [
   // {
   //   regex: /[ä]+/i,
   //   languages: ['is', 'tr', 'hu', 'et', 'de', 'sv', 'sk']
-  // },
-  // {
-  //   regex: /[á|é|í|ó|ú]+/i,
-  //   languages: ['fr', 'es', 'it', 'cn', 'nl', 'fo', 'is', 'pt', 'vi', 'cy', 'el']
   // },
   // {
   //   regex: /[â|ê|î]+/i,
