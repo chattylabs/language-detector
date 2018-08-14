@@ -1,0 +1,52 @@
+{
+  "name": "customisable-language-detection",
+  "version": "0.1.0",
+  "description": "Library that helps detecting the language of a given piece of text.",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielantelo/language-detector.git"
+  },
+  "author": {
+    "name" : "Daniel Antelo",
+    "url" : "https://github.com/danielantelo"
+  },
+  "contributors": [
+    {
+      "name" : "Daniel Antelo",
+      "url" : "https://github.com/danielantelo"
+    }
+  ],
+  "dependencies": {
+    "striptags": "^3.1.1"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "csv-parse": "^2.5.0",
+    "glob": "^7.1.2",
+    "husky": "^1.0.0-rc.13",
+    "jest": "^23.4.1",
+    "prettier": "1.13.7",
+    "pretty-quick": "^1.6.0",
+    "sync-request": "^6.0.0"
+  },
+  "scripts": {
+    "test": "jest --env=node --colors",
+    "train": "node bin/train.js",
+    "prettier": "prettier --write **/*.js **/**/*.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && npm run test"
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "semi": false
+  },
+  "jest": {
+    "verbose": true
+  }
+}
