@@ -2,7 +2,7 @@ const reducer = require('./reducer')
 const profiler = require('./profiler')
 const defaultLanguageProfiles = require('../data/languageProfiles.json')
 
-module.exports = (text, opts) => {
+module.exports = (text, opts= {}) => {
   const { languageProfiles = defaultLanguageProfiles, reducers } = opts
   const allLanguages = Object.keys(languageProfiles)
   const reducedLanguages = reducer(text, reducers)
@@ -14,12 +14,13 @@ module.exports = (text, opts) => {
   }
 
   const languagesIntersection = () => allLanguages.filter(lang => -1 !== reducedLanguages.indexOf(lang))
-  const languages = reducedLanguages.length > 1 ? languagesIntersection : allLanguages;
+  const languages = reducedLanguages.length > 1 ? languagesIntersection() : allLanguages;
   const inputProfile = profiler(text)
   const scores = {}
   inputProfile.forEach((ngram, index) => {
     languages.forEach(language => {
-      const found = languageProfiles[language].findIndex(entry => entry.token === ngram.token)
+      const foundPos = languageProfiles[language].findIndex(entry => entry.token === ngram.token)
+      const found = foundPos >= 0
       const penalty = found ? Math.abs(found - index) : 1000
       language in scores ? (scores[language] -= penalty) : (scores[language] = 0 - penalty)
     })
@@ -27,7 +28,7 @@ module.exports = (text, opts) => {
 
   const sorted = Object.keys(scores)
     .map(language => ({ language: language, score: scores[language] }))
-    .sort((first, second) => first.score - second.score)
+    .sort((first, second) => second.score - first.score)
 
   const bestMatchParts = sorted[0].language.split('_');
   return {
