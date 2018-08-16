@@ -1,6 +1,6 @@
 {
   "name": "@chattylabs/language-detection",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Package to detect the language of a given text (focusing on short sms type text used on tweets, facebook, WhatsApp, etc)",
   "main": "src/index.js",
   "repository": {
