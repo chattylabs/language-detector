@@ -26,11 +26,11 @@ test('German if there is the letter ß', () => {
 })
 
 test('Polish if there is czy', () => {
-  assertTextReducesToLanguages('Czy mógłbym zasnąć w przedmieściach Twoich myśli?', ['pl'])
+  assertTextReducesToLanguages('Czy mogłbym zasnąć w przedmieściach Twoich myśli?', ['pl'])
 })
 
 test('Polish if there is letters Ł, ń, ś or ź', () => {
-  assertTextReducesToLanguages('mógłbym Ła', ['pl'])
+  assertTextReducesToLanguages('mogłbym Ła', ['pl'])
   assertTextReducesToLanguages('ńa', ['pl'])
   assertTextReducesToLanguages('śa', ['pl'])
   assertTextReducesToLanguages('źa', ['pl'])
