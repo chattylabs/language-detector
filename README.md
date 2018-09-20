@@ -1,4 +1,4 @@
-# Language Detector
+# <img src="art/logo.png" width="250px"/>
 
 This package aids the detection of the language of a given text.
 
